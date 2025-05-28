@@ -12,11 +12,33 @@ function App() {
       });
   }, []);
   return (
-    <ul>
-      {actressesArray.map((actress, index) => (
-        <li key={index}>{actress.id}</li>
-      ))}
-    </ul>
+    <div className="container">
+      <div className="row g-3">
+        {actressesArray.map((actress, index) => (
+          <div className="col-4" key={index}>
+            <div className="card h-100">
+              <img
+                src={actress.image}
+                alt={actress.name}
+                className="card-img-top"
+              />
+
+              <div className="card-body">
+                <div className="card-title">{actress.name}</div>
+                <div className="card-subtitle mb-2 text-body-secondary">
+                  {actress.birth_year}
+                </div>
+                <div className="card-text">
+                  Nationality: {actress.nationality}
+                </div>
+                <div className="card-text">Biography: {actress.biography}</div>
+                <div className="card-text">Awards: {actress.awards}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

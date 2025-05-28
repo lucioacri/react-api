@@ -14,7 +14,7 @@ function App() {
   return (
     <ul>
       {actressesArray.map((actress, index) => (
-        <li key={index}>{actress.name}</li>
+        <li key={index}>{actress.id}</li>
       ))}
     </ul>
   );
